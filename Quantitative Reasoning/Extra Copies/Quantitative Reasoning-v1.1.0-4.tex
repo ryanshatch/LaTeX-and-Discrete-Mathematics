@@ -1,0 +1,406 @@
+% ----------------------------------------------------------------
+% AMS-LaTeX Paper ************************************************
+% **** -----------------------------------------------------------
+%\documentclass{amsart}
+%\usepackage{txfonts}
+%\documentclass[12pt,oneside]{article}
+\documentclass{amsart}
+\usepackage{graphicx}
+\usepackage{enumitem}
+% ----------------------------------------------------------------
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{Exercise}
+\newtheorem{ex}[thm]{Exercise}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\theoremstyle{rule}
+\newtheorem{rul}[thm]{Rule}
+
+\numberwithin{equation}{section}
+% MATH -----------------------------------------------------------
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\BX}{\bB(X)}
+\newcommand{\A}{\mathcal{A}}
+% ----------------------------------------------------------------
+
+% define some simple, commonly-used commands
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\dint}{\displaystyle\int}
+
+\newcommand{\pdr}[2]{\dfrac{\partial{#1}}{\partial{#2}}}
+\newcommand{\pdrr}[2]{\dfrac{\partial^2{#1}}{\partial{#2}^2}}
+\newcommand{\pdrt}[3]{\dfrac{\partial^2{#1}}{\partial{#2}{\partial{#3}}}}
+\newcommand{\dr}[2]{\dfrac{d{#1}}{d{#2}}}
+\newcommand{\aver}[1]{\langle {#1} \rangle}
+\newcommand{\Baver}[1]{\Big\langle {#1} \Big\rangle}
+
+\newcommand{\bzero}{\mathbf 0}
+\newcommand{\bGamma}{\mbox{\boldmath{$\Gamma$}}}
+\newcommand{\btheta}{\boldsymbol \theta}
+\newcommand{\bchi}{\mbox{\boldmath{$\chi$}}}
+\newcommand{\bnu}{\boldsymbol \nu}
+\newcommand{\bmu}{\boldsymbol \mu}
+\newcommand{\brho}{\mbox{\boldmath{$\rho$}}}
+\newcommand{\bxi}{\boldsymbol \xi}
+\newcommand{\bnabla}{\boldsymbol \nabla}
+\newcommand{\bOm}{\boldsymbol \Omega}
+\newcommand{\blambda}{\boldsymbol \lambda}
+\newcommand{\bsigma}{\boldsymbol \sigma}
+
+\newcommand{\bbR}{\mathbb R}
+\newcommand{\bbC}{\mathbb C}
+\newcommand{\bbQ}{\mathbb Q}
+\newcommand{\bbN}{\mathbb N}
+\newcommand{\bbZ}{\mathbb Z}
+
+\newcommand{\ba}{\mathbf a} \newcommand{\bb}{\mathbf b}
+\newcommand{\bc}{\mathbf c} \newcommand{\bd}{\mathbf d}
+\newcommand{\be}{\mathbf e} \newcommand{\bff}{\mathbf f}
+\newcommand{\bg}{\mathbf g} \newcommand{\bh}{\mathbf h}
+\newcommand{\bi}{\mathbf i} \newcommand{\bj}{\mathbf j}
+\newcommand{\bk}{\mathbf k} \newcommand{\bl}{\mathbf l}
+\newcommand{\bm}{\mathbf m} \newcommand{\bn}{\mathbf n}
+\newcommand{\bo}{\mathbf o} \newcommand{\bp}{\mathbf p}
+\newcommand{\bq}{\mathbf q} \newcommand{\br}{\mathbf r}
+\newcommand{\bs}{\mathbf s} \newcommand{\bt}{\mathbf t}
+\newcommand{\bu}{\mathbf u} \newcommand{\bv}{\mathbf v}
+\newcommand{\bw}{\mathbf w} \newcommand{\bx}{\mathbf x}
+\newcommand{\by}{\mathbf y} \newcommand{\bz}{\mathbf z}
+\newcommand{\bA}{\mathbf A} \newcommand{\bB}{\mathbf B}
+\newcommand{\bC}{\mathbf C} \newcommand{\bD}{\mathbf D}
+\newcommand{\bE}{\mathbf E} \newcommand{\bF}{\mathbf F}
+\newcommand{\bG}{\mathbf G} \newcommand{\bH}{\mathbf H}
+\newcommand{\bI}{\mathbf I} \newcommand{\bJ}{\mathbf J}
+\newcommand{\bK}{\mathbf K} \newcommand{\bL}{\mathbf L}
+\newcommand{\bM}{\mathbf M} \newcommand{\bN}{\mathbf N}
+\newcommand{\bO}{\mathbf O} \newcommand{\bP}{\mathbf P}
+\newcommand{\bQ}{\mathbf Q} \newcommand{\bR}{\mathbf R}
+\newcommand{\bS}{\mathbf S} \newcommand{\bT}{\mathbf T}
+\newcommand{\bU}{\mathbf U} \newcommand{\bV}{\mathbf V}
+\newcommand{\bW}{\mathbf W} \newcommand{\bX}{\mathbf X}
+\newcommand{\bY}{\mathbf Y} \newcommand{\bZ}{\mathbf Z}
+
+\newcommand{\cA}{\mathcal A} \newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C} \newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E} \newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G} \newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I} \newcommand{\cJ}{\mathcal J}
+\newcommand{\cK}{\mathcal K} \newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M} \newcommand{\cN}{\mathcal N}
+\newcommand{\cO}{\mathcal O} \newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q} \newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S} \newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U} \newcommand{\cV}{\mathcal V}
+\newcommand{\cW}{\mathcal W} \newcommand{\cX}{\mathcal X}
+\newcommand{\cY}{\mathcal Y} \newcommand{\cZ}{\mathcal Z}
+
+
+%%%%%%%%%%%%%%Start%%%%%%%%%%%%%Start%%%%%%%%%%%Start%%%%%%%%%%%%%%%Start%%%%%%%%%%%%%%%%%%%%%%%%%Start%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%Start%%%%%%%%%%%%%Start%%%%%%%%%%%Start%%%%%%%%%%%%%%%Start%%%%%%%%%%%%%%%%%%%%%%%%%Start%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%Start%%%%%%%%%%%%%Start%%%%%%%%%%%Start%%%%%%%%%%%%%%%Start%%%%%%%%%%%%%%%%%%%%%%%%%Start%%%%%%%%%%%%%%%%
+%\documentclass[12pt,oneside]{article}
+
+\usepackage{pdfpages}
+%--------------
+\usepackage{enumitem}
+%-------------Tasks
+%\usepackage{tasks} %\begin{tasks} \item \end{tasks}
+%\bfseries Horizontal list: a = alphabetical \normalfont
+%\begin{tasks}[counter-format = {tsk[a].},label-offset = {0.6em},label-format = {\bfseries}](6)
+%\task One
+%\task Two
+%\task Three
+%\task Four
+%\task Five
+%\task Six
+%\task Seven
+%\task Eight
+%\task Nine
+%\task Ten
+%\end{tasks}
+%\vglue5mm
+%\bfseries Horizontal list: A = Alphabetical \normalfont
+%\begin{tasks}[counter-format = {(tsk[A])},label-offset = {0.8em},label-format = {\bfseries}](3)
+%\task One
+%\task Two
+%\task Three
+%\task Four
+%\task Five
+%\task Six
+%\task Seven
+%\task Eight
+%\task Nine
+%\task Ten
+%\end{tasks}
+
+
+
+%___________________________
+\usepackage[margin=2.5cm]{geometry}
+
+\geometry{hmargin=3cm,vmargin=2cm}
+\usepackage{tikz}
+\def\width{18}
+\def\hauteur{13}
+
+
+\pagestyle{plain}
+
+%%%%%%%%%%%%%%Start%%%%%%%%%%%%%Start%%%%%%%%%%%Start%%%%%%%%%%%%%%%Start%%%%%%%%%%%%%%%%%%%%%%%%%Start%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%Start%%%%%%%%%%%%%Start%%%%%%%%%%%Start%%%%%%%%%%%%%%%Start%%%%%%%%%%%%%%%%%%%%%%%%%Start%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%Start%%%%%%%%%%%%%Start%%%%%%%%%%%Start%%%%%%%%%%%%%%%Start%%%%%%%%%%%%%%%%%%%%%%%%%Start%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\chead{\includegraphics[scale=.1]{snhu_logo.png}}
+\begin{document}
+
+\title{\sf MAT 230 Exam One}%
+
+
+\begin{center}
+\includegraphics[scale=.1]{snhu_logo.png}
+\end{center}
+
+%\thm{bbjh}
+\maketitle
+This document is proprietary to Southern New Hampshire University. It and the problems within may not be posted on any non-SNHU website.\\\\\\\\
+\begin{center}
+%Enter your name below this line:
+Ryan Hatch
+\end{center}
+
+\begin{center}
+\rule{\textwidth}{0.4pt}
+\end{center}
+\newpage
+\section*{}
+\section*{}
+Directions: Type your solutions into this document and be sure to show all steps for arriving at your solution. Just giving a final number may not receive full credit.
+\\
+\section*{Problem 1}
+\begin{enumerate}[label=(\alph*)]
+\item The domain for all variables in the expressions below is the set of real numbers. {\bf Determine whether each statement is true or false.}
+\begin{enumerate}[label=(\roman*)]
+  \item $\forall\, x\; \exists \,y\;(x\,+\,y\;\geq \;0)$
+\\\\
+%Enter your answer below this comment line.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+This statement is true. 
+\\\\
+For any real number x, you can always find a real number y in such that their sum results in a positive number. For example, if I use y as the absolute value of x (y = |x|), then x + y will always be greater than or equal to 0, since |x| will either result in a positive number or a zero.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\\\\
+  \item $\exists \, x\; \forall \,y\;(x\,\cdot\,y\;>\; 0)$
+   \\\\
+  %Enter your answer below this comment line.  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+This statement is false. 
+\\\\
+There is no single real number x that can be multiplied with every real number y to always result in a product greater than 0. For example, if x is positive, then there is a negative y such that x * y equals to a negative. If x is negative, then there is a positive y such that x * y is negative. Also, if x is zero, then x * y is always zero, which is not greater than 0.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\\\
+\end{enumerate}
+
+\item {\bf Translate each of the following English statements into logical expressions.}
+\begin{enumerate}[label=(\roman*)]
+  \item There are two numbers whose ratio is less than $1$.
+   \\\\
+  %Enter your answer below this comment line.  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The logical expression for this statement is: ∃a, b ∈ ℝ (a/b < 1 ∧ b ≠ 0). 
+\\\\
+This means there are two real numbers (a and b) such that a divided by b is less than 1, and b is not equal to zero to avoid dividing it by zero.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\\\
+  \item The reciprocal of every positive number is also positive.
+   \\\\
+  %Enter your answer below this comment line.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The logical expression for this statement is: ∀x ∈ ℝ⁺ (1/x > 0). 
+\\\\
+This means for all x in the set of positive real numbers, the reciprocal of x (which is 1/x) is greater than 0.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\\\
+  \end{enumerate}
+  \end{enumerate}
+  \newpage
+  \section*{}
+  \section*{}
+  \section*{Problem 2}
+  Prove the following using the specified technique:
+  \begin{enumerate}[label=(\alph*)]
+    \item Let $x$ and $y$ be two real numbers such that $x + y$ is rational. Prove by contra positive that if $x$ is irrational, then $x - y$ is irrational.
+          \\\\
+  %Enter your answer below this comment line.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let's assume that x - y is rational and then prove the statement by contra position that x has to be rational too. Suppose x - y is a rational number. Since x + y is rational, and the sum of two rational numbers is rational, therefore (x - y) + 2y = x + y must be rational. Since y is a real number and real numbers are closed under multiplication, 2y is rational. If x - y is rational, then in closing the rational numbers under addition, adding 2y, which is rational, to it gives a rational number, x + y, and x must therefore be rational. This contra positive proof shows that if x is irrational, then x - y must be irrational.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\\\\
+    \item Prove by contradiction that for any positive two real numbers, $x$ and $y$,
+         if $x\cdot y\, \leq \,50$, then either $x < 8$ or $y < 8$.
+          \\\\
+  %Enter your answer below this comment line.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In order to prove by contradiction, I assumed the opposite of what we want to prove - both x and y will be greater than or equal to 8. Then, x * y would at least be 8 * 8, which is 64. Then the given statement x * y ≤ 50 is contradicted and my assumption must be false, and hence it follows that if x * y ≤ 50, then either x < 8 or y < 8.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\\\
+  \end{enumerate}
+  \newpage
+  \section*{}
+  \section*{}
+  \section*{Problem 3}
+  Let $n\, \geq \, 1$, $x$ be a real number, and $x\, \geq\,-1$. {\bf Prove the following statement using mathematical induction.}
+  \[(1\,+\,x)^n\;\geq\;1\,+\,nx\]
+\\\\
+  %Enter your answer below this comment line.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Starting with the base case \(n = 1\): 
+\[(1 + x)^1 = 1 + x = 1 + 1 \cdot x\]\\
+The base case holds true since both sides are equal.
+\\\\
+Next, using the inductive step to prove the statement for \(n + 1\):
+\\\\
+I assumed for induction that for some \(k \geq 1\), the statement is true:\\
+\[(1 + x)^k \geq 1 + kx\]
+In order to prove:\\
+\[(1 + x)^{k + 1} \geq 1 + (k + 1)x\]
+Starting with the left side:
+
+\begin{align*}
+(1 + x)^{k + 1} &= (1 + x)^k \cdot (1 + x) \\
+&\geq (1 + kx) \cdot (1 + x) \quad \text{(by the induction hypothesis)} \\
+&= 1 + x + kx + kx^2 \\
+&\geq 1 + x + kx \quad \text{(considering that \(x^2 \geq 0\) and \(k \geq 1\), there for \(kx^2 \geq 0\))} \\
+&= 1 + (k + 1)x
+\end{align*}
+\\
+This confirms the statement for \(k + 1\), and by the principle of mathematical induction, it follows that:
+\[(1 + x)^n \geq 1 + nx\]
+is true for all \(n \geq 1\) and \(x \geq -1\).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\\\
+\newpage
+  \section*{}
+  \section*{}
+  \section*{Problem 4}
+  {\bf Solve the following problems:}
+  \begin{enumerate}[label=(\alph*)]
+    \item How many ways can a store manager arrange a group of 1 team leader and 3 team workers from his 25 employees?
+\\\\
+  %Enter your answer below this comment line.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To arrange a group of 1 team leader and 3 team workers from 25 employees, I chose 1 out of the 25 to be the team leader and then 3 out of the remaining 24 to be the team workers. The number of ways to choose the team leader is \(25\) (since any one of the employees can be chosen). After choosing the team leader, I had \(24\) employees left and needed to choose \(3\) team workers. The number of ways to do this is given by the combination \(24 \choose 3\), which is the number of ways to choose \(3\) workers from \(24\) without regard to the order.
+\\\\
+The total number of ways to arrange the group is the product of these two numbers, which is:
+\[
+\text{Total arrangements} = 25 \times \binom{24}{3}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\\\
+    \item A state’s license plate has 7 characters. Each character can be a capital letter $(A-Z)$, or a non-zero digit $(1-9)$. How many license plates start with 3 capital letters and end with 4 digits with no letter or digit repeated?
+\\\\
+  %Enter your answer below this comment line.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For the license plate, there are \(26\) choices for each of the first three capital letters and \(9\) choices for each of the four digits (since the digits are non-zero). (Also taking into account for the fact that there are no repeats.) For the first letter, there are \(26\) choices. For the second letter, there are \(26 - 1 = 25\) choices (since we can't repeat the first letter). For the third letter, there are \(26 - 2 = 24\) choices. For the first digit, there are \(9\) choices, for the second digit \(9 - 1 = 8\) choices, for the third digit \(9 - 2 = 7\) choices, and for the fourth digit \(9 - 3 = 6\) choices.
+\\\\
+Making the total number of license plates is the product of these choices:
+\[
+\text{Total license plates} = 26 \times 25 \times 24 \times 9 \times 8 \times 7 \times 6
+\]
+\\
+    \item How many binary strings of length 5 have at least 2 adjacent bits that are the same (``$00$'' or ``$11$'') somewhere in the string?
+\\\\
+  %Enter your answer below this comment line.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To find the number of binary strings of length \(5\) with at least \(2\) adjacent bits the same, it's easier to find the total number of binary strings of length \(5\) and subtract the number of strings that do not have \(2\) adjacent bits the same.\\\\
+The total number of binary strings of length \(5\) is \(2^5\), since each bit has \(2\) choices (either \(0\) or \(1\)).\\\\
+A string of length \(5\) that does not have \(2\) adjacent bits the same must alternate between \(0\) and \(1\), so there are only \(2\) such strings: \(01010\) and \(10101\).\\\\
+Thus, the number of binary strings of length \(5\) that have at least \(2\) adjacent bits the same is: 
+\[
+\text{Total binary strings} = 2^5 - 2
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\\
+  \end{enumerate}
+\newpage
+  \section*{}
+  \section*{}
+  \section*{Problem 5}
+  A class with n kids lines up for recess. The order in which the kids line up is random with each ordering being equally likely. There are two kids in the class named Betty and Mary. The use of the word ``$or$'' in the description of the events, should be interpreted as the inclusive or. That is ``$A \;or\; B$'' means that $A$ is true, $B$ is true, or both $A$ and $B$ are true.\\\\
+  What is the probability that Betty is first in line or Mary is last in line as a function of $n$? Simplify your final expression as much as possible and include an explanation of how you calculated this probability.
+\\\\
+  %Enter your answer below this comment line.  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The probability \( P \) that Betty is first in line or Mary is last in line, given that the class has \( n \) kids, can be calculated as follows:
+\[ P(Betty\ first\ or\ Mary\ last) = P(Betty\ first) + P(Mary\ last) - P(Betty\ first\ and\ Mary\ last) \]
+\[ P = \frac{1}{n} + \frac{1}{n} - \frac{1}{n^2} \]\\\\
+Simplifying, we have:
+\[ P = \frac{n + n - 1}{n^2} \]
+\[ P = \frac{2n - 1}{n^2} \]\\\\
+Thus, the simplified final expression for the probability is \( \frac{2n - 1}{n^2} \), which accounts for the "inclusive or" condition by subtracting the overlap of the two events.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\\\
+  \newpage
+  \section*{}
+  \section*{}
+  \section*{Problem 6}
+The general manager, marketing director, and 3 other employees of Company $A$ are hosting a visit by the vice president and 2 other employees of Company $B$. The eight people line up in a random order to take a photo. Every way of lining up the people is equally likely.
+\begin{enumerate}[label=(\alph*)]
+  \item What is the probability that the general manager is next to the vice president?
+\\\\
+  %Enter your answer below this comment line.  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To find the probability that the general manager is next to the vice president, I first took into consideration that there are 7 possible positions where the general manager could be placed next to the vice president (since there are 8 positions in line, the vice president could be in any of the first 7 positions to have someone next to them). For each of these positions, there are 2 ways the general manager could be next to the vice president (either to the left or to the right). Therefore, there are \(7 \times 2 = 14\) favorable outcomes.
+
+Since the total number of ways to arrange 8 people is \(8!\), the probability is \( \frac{14}{8!} \).
+
+The probability \( P(GM \; next \; to \; VP) \):
+
+\[ P(GM \; next \; to \; VP) = \frac{14}{8!} \]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\\\
+  \item What is the probability that the marketing director is in the leftmost position?
+\\\\
+  %Enter your answer below this comment line.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The probability that the marketing director is in the leftmost position is \( \frac{1}{8} \) because there are 8 positions and each is equally likely to be the leftmost. Therefore, The probability \( P(MD \; in \; leftmost) \):
+
+\[ P(MD \; in \; leftmost) = \frac{1}{8} \]
+\\\\
+  \item Determine whether the two events are independent. Prove your answer by showing that one of the conditions for independence is either true or false.
+ \\\\
+  %Enter your answer below this comment line.  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To determine whether the two events are independent, the first thing I did was to check if the probability of one event occurring affects the probability of the other event occurring. 
+
+If the events were independent, then the probability of both events occurring would be the product of their individual probabilities. The probability that the general manager is next to the vice president is \( \frac{14}{8!} \) from part (a), and the probability that the marketing director is in the leftmost position is \( \frac{1}{8} \) from part (b).
+
+The probability of both occurring would then be \( \frac{14}{8!} \times \frac{1}{8} \). None the less, this is not actually the probability of both occurring because the presence of the marketing director in the leftmost position reduces the positions where the general manager and vice president can be next to each other (they can't be in the first two positions if the marketing director is already in the first).
+
+This means that the occurrence of one event affects the probability of the other event, so the two events are not independent.\\\\
+Thus, To check for independence, I calculated \( P(GM \; next \; to \; VP \; and \; MD \; in \; leftmost) \):
+
+\[ P(GM \; next \; to \; VP \; and \; MD \; in \; leftmost) \neq P(GM \; next \; to \; VP) \times P(MD \; in \; leftmost) \]
+
+This implies the events are not independent, as the occurrence of one event affects the probability of the other event.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{enumerate}
+\end{document}
